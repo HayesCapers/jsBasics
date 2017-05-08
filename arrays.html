@@ -1,0 +1,45 @@
+<script type="text/javascript">
+
+var students = [];
+var student1 = "Hayes";
+var sutdent2 = "Micheal";
+var student3 = "Chris";
+
+students = ['hayes', 'micheal', 'Chris'];
+console.log(students);
+console.log(students.length);
+
+var nfcSouth = [
+	'Falcons',
+	'Panthers',
+	'Saints',
+	'Bucs'
+]
+
+nfcSouth.push('Cowboys');
+console.log(nfcSouth);
+nfcSouth.pop();
+console.log(nfcSouth);
+
+// slice does not change the array it simply returns a copy of a selected chunk of the array
+console.log(nfcSouth.slice(0,2));
+console.log(nfcSouth.slice(-1,-2));
+
+// splice actually changes the array
+nfcSouth.splice(1,0,"")
+
+var atlTeams = [
+	'Falcons',
+	'Braves',
+	'Hawks',
+	'Trashers'	
+]
+
+var newTeam = prompt("enter the new atlanta team")
+// atlTeams.push(newTeam)
+// console.log(atlTeams)
+atlTeams.splice(-1,1,newTeam)
+if (atlTeams[-1] == 'Atlanta United'){
+	console.log('correct team added!')
+}
+</script>

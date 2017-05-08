@@ -1,0 +1,46 @@
+<script type="text/javascript">
+	
+// 1.Given a number between 0 and 6 representing the days of the week, print "Go to work." if it's a work day and "Sleep in." if it's a weekend day. You can set up an array for the days of the week, or for extra credit, you can check out the JS Date object here).
+
+// var userInput = prompt("Enter a number between 0 and 6.")
+
+// if (isNaN(userInput)){
+// 	console.log("Asshole...");
+// }else if ((userInput > 0) && (userInput < 6)){
+// 	console.log("Go to Work!");
+// }else{
+// 	console.log("Sleep in.");
+// }
+
+
+// 2. Given a month number, between 1 and 12, and a year, print the number of days in that month - accounting for leap years.
+
+var months = [
+	'February',
+	'April',
+	'June',
+	'September',
+	'November',
+	'January',
+	'March',
+	'May',
+	'July',
+	'August',
+	'October',
+	'December'
+]
+
+var userInput = prompt('What is the month?')
+var inputIndex = months.indexOf(userInput)
+
+if (inputIndex == months[0]){
+	console.log('28 days');
+}else if ((inputIndex >= 1) || (inputIndex < 5)){
+	console.log('30 days')
+}else if ((inputIndex >= 5) || (inputIndex <= 11)){
+	console.log('31 days')
+}else{
+	console.log('Nice try asshole.')
+}
+
+</script>
