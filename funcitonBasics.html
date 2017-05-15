@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+	<script type="text/javascript">
+		
+	// document.getElementById("main").innerHTML = "The text has been replaced"
+
+	function callMe(bool) {
+		console.log("Hello, from the inside of call me");
+		return bool
+	}
+
+	function runFunction(){
+
+		randomNum = Math.random();
+		if (randomNum > .5){
+			var arg = true;
+		}else {
+			var arg = false;
+		}
+
+
+		var num = 5;
+		console.log(num);
+		theBoolean = callMe(arg);
+		if (theBoolean){
+			console.log("Boolean s true")
+		}else{
+			console.log("Boolean is false")
+		}
+		console.log(num);
+	}
+
+	</script>
+
+</head>
+<body>
+
+	<div id="main">
+		replace this text
+		<button onclick="runFunction();">Click ME</button>
+	</div>
+
+
+</body>
+</html>

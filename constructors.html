@@ -1,0 +1,44 @@
+<script type="text/javascript">
+	
+function Player (name, position, avgM, avgP, avgR, starter){
+	this.name = name;
+	this.position = position;
+	this.avgM = avgM;
+	this.avgP = avgP;
+	this.avgR = avgR;
+	this.starter = starter;
+	// this.species = species;
+
+	// this.reportPPM = function(){
+	// 	var ppm = this.avgP / this.avgM;
+	// 	ppm = Math.round(ppm * 100) / 100;
+	// 	return ppm
+	// }
+}
+
+// Every player has the same reportPPM function
+// instead of having a copy of the same function for evey copy of Player,
+// prototype allows every object of a constructor to inherit properties that are the same for each object
+// without duplicating the function for every copy
+// This becomes very helpful when there are hundreds of thousands or millions of objects,
+// but has little performance effect in smaller program with few objects
+Player.prototype.reportPPM = function(){
+	var ppm = this.avgP / this.avgM;
+		ppm = Math.round(ppm * 100) / 100;
+		return ppm;
+}
+
+Player.prototype.species = "Human"
+
+var player1 = new Player("Hayes Capers", "PG", 40, 9000, 500, true, "DemiGOD");
+var player2 = new Player("Kevin Durant", "SF", 41, 25.1, 8.3, true);
+var player3 = new Player("Clay Thompson", "SG", 40.2, 22.3, 3.7, true);
+console.log(player1.name);
+console.log(player1.species);
+// console.log(player1);
+// console.log(player1.reportPPM());
+// console.log(player2.reportPPM());
+// console.log(player3.reportPPM());
+
+
+</script>
