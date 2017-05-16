@@ -1,0 +1,86 @@
+<!-- Scope
+-Determines what can see a variable.
+
+-Global, top level, Everyone can see and change a global
+	-in python these are all the way to the left
+
+-Local
+	-Inside of a function, only visible internally and to child functions. -->
+
+<script type="text/javascript">
+	// Global Variable
+	// Global variables are attached to the window
+	// var imAGlobal = 1;
+	// function checkScope(){
+	// 	// In spite of the misleading name, this is a local variable
+	// 	// It is not visible outside the above function
+	// 	var imAGlobal = 2;
+	// 	console.log("local variabel",imAGlobal); // 2
+	// 	// putting window. in front of anything will acces the Global scope
+	// 	// console.log(window.imAGlobal); // 1
+	// 	function child(){
+	// 		imAGlobal = 3;
+	// 		// child can see things in its parents scope
+	// 		console.log("inside of child",imAGlobal); // 3
+	// 	}
+	// 	child();
+	// 	console.log("after child", imAGlobal)
+	// }
+
+	// checkScope();
+	// // This will kick back an error because child is a local function of checkScope()
+	// child();
+
+	// global copy of x
+	var x = 1;
+	function hoistingTest(){
+		// based on scope, hoistingTest can see the global x
+		console.log(x);
+		// local copy of x
+		var x = 2;
+		y = 3;
+	}
+	// returns undefined
+	hoistingTest();
+	// yo would think that this would return undefined; however, it will look for a variabe in the global and then in the child 
+	// if there is no global variable it will create one in the global scope using the local variable
+	// NEVER DO THIS!!!!!
+	console.log(y);
+
+
+	// because javascript hoists local variable without your knowledge. the above function actually looks like this.
+	// It is easy to see why this returns undefined
+	var x = 1;
+	function hoistingTest(){
+		var x;
+		console.log(x);
+		x = 2;
+	}
+</script>
+
+
+-Hoisting
+	-Put your variables at the top of a function or JS will do it for you.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
